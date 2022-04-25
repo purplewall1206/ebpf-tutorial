@@ -10,6 +10,7 @@ BPF_HISTOGRAM(dist);
 BPF_HISTOGRAM(dist_linear);
 int trace_req_done(struct pt_regs *ctx, struct request *req)
 {
+    bpf_trace_printk("Hello, World!\\n");
     dist.increment(bpf_log2l(req->__data_len / 1024));
     dist_linear.increment(req->__data_len / 1024);
     return 0;
@@ -23,7 +24,7 @@ else:
 
 # header
 print("Tracing... Hit Ctrl-C to end.")
-
+# b.trace_print()
 # trace until Ctrl-C
 try:
     sleep(99999999)
