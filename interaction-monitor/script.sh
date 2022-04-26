@@ -1,740 +1,571 @@
 echo "===================================="
-echo __alloc_percpu
-sudo bpftrace -l | grep __alloc_percpu
+echo I_BDEV
+sudo bpftrace -l | grep I_BDEV
 echo "===================================="
 echo "===================================="
-echo __alloc_workqueue_key
-sudo bpftrace -l | grep __alloc_workqueue_key
+echo __bforget
+sudo bpftrace -l | grep __bforget
 echo "===================================="
 echo "===================================="
-echo ___ratelimit
-sudo bpftrace -l | grep ___ratelimit
+echo __block_write_begin
+sudo bpftrace -l | grep __block_write_begin
 echo "===================================="
 echo "===================================="
-echo __generic_file_write_iter
-sudo bpftrace -l | grep __generic_file_write_iter
+echo __blockdev_direct_IO
+sudo bpftrace -l | grep __blockdev_direct_IO
 echo "===================================="
 echo "===================================="
-echo __init_rwsem
-sudo bpftrace -l | grep __init_rwsem
+echo __bread_gfp
+sudo bpftrace -l | grep __bread_gfp
 echo "===================================="
 echo "===================================="
-echo __bdev_dax_supported
-sudo bpftrace -l | grep __bdev_dax_supported
+echo __breadahead_gfp
+sudo bpftrace -l | grep __breadahead_gfp
 echo "===================================="
 echo "===================================="
-echo bdevname
-sudo bpftrace -l | grep bdevname
+echo __brelse
+sudo bpftrace -l | grep __brelse
 echo "===================================="
 echo "===================================="
-echo blkdev_issue_discard
-sudo bpftrace -l | grep blkdev_issue_discard
+echo __fdget
+sudo bpftrace -l | grep __fdget
 echo "===================================="
 echo "===================================="
-echo __cleancache_get_page
-sudo bpftrace -l | grep __cleancache_get_page
+echo __find_get_block
+sudo bpftrace -l | grep __find_get_block
 echo "===================================="
 echo "===================================="
-echo __cleancache_init_fs
-sudo bpftrace -l | grep __cleancache_init_fs
+echo __generic_file_fsync
+sudo bpftrace -l | grep __generic_file_fsync
 echo "===================================="
 echo "===================================="
-echo __filemap_set_wb_err
-sudo bpftrace -l | grep __filemap_set_wb_err
+echo __getblk_gfp
+sudo bpftrace -l | grep __getblk_gfp
 echo "===================================="
 echo "===================================="
-echo __init_waitqueue_head
-sudo bpftrace -l | grep __init_waitqueue_head
+echo __lock_buffer
+sudo bpftrace -l | grep __lock_buffer
 echo "===================================="
 echo "===================================="
-echo __lock_page
-sudo bpftrace -l | grep __lock_page
+echo __mark_inode_dirty
+sudo bpftrace -l | grep __mark_inode_dirty
 echo "===================================="
 echo "===================================="
-echo __might_fault
-sudo bpftrace -l | grep __might_fault
+echo __mb_cache_entry_free
+sudo bpftrace -l | grep __mb_cache_entry_free
 echo "===================================="
 echo "===================================="
-echo __might_sleep
-sudo bpftrace -l | grep __might_sleep
+echo __page_symlink
+sudo bpftrace -l | grep __page_symlink
 echo "===================================="
 echo "===================================="
-echo __mutex_init
-sudo bpftrace -l | grep __mutex_init
+echo __sb_end_write
+sudo bpftrace -l | grep __sb_end_write
 echo "===================================="
 echo "===================================="
-echo __page_ref_mod
-sudo bpftrace -l | grep __page_ref_mod
+echo __sb_start_write
+sudo bpftrace -l | grep __sb_start_write
 echo "===================================="
 echo "===================================="
-echo __page_ref_mod_and_test
-sudo bpftrace -l | grep __page_ref_mod_and_test
+echo __set_page_dirty_buffers
+sudo bpftrace -l | grep __set_page_dirty_buffers
 echo "===================================="
 echo "===================================="
-echo __pagevec_release
-sudo bpftrace -l | grep __pagevec_release
+echo __sync_dirty_buffer
+sudo bpftrace -l | grep __sync_dirty_buffer
 echo "===================================="
 echo "===================================="
-echo __percpu_down_read
-sudo bpftrace -l | grep __percpu_down_read
+echo __wait_on_buffer
+sudo bpftrace -l | grep __wait_on_buffer
 echo "===================================="
 echo "===================================="
-echo __percpu_init_rwsem
-sudo bpftrace -l | grep __percpu_init_rwsem
+echo bh_submit_read
+sudo bpftrace -l | grep bh_submit_read
 echo "===================================="
 echo "===================================="
-echo __percpu_up_read
-sudo bpftrace -l | grep __percpu_up_read
+echo bh_uptodate_or_lock
+sudo bpftrace -l | grep bh_uptodate_or_lock
 echo "===================================="
 echo "===================================="
-echo __put_devmap_managed_page
-sudo bpftrace -l | grep __put_devmap_managed_page
+echo blkdev_get_by_dev
+sudo bpftrace -l | grep blkdev_get_by_dev
 echo "===================================="
 echo "===================================="
-echo __put_page
-sudo bpftrace -l | grep __put_page
+echo blkdev_put
+sudo bpftrace -l | grep blkdev_put
 echo "===================================="
 echo "===================================="
-echo __raw_spin_lock_init
-sudo bpftrace -l | grep __raw_spin_lock_init
+echo block_commit_write
+sudo bpftrace -l | grep block_commit_write
 echo "===================================="
 echo "===================================="
-echo __refrigerator
-sudo bpftrace -l | grep __refrigerator
+echo block_invalidatepage
+sudo bpftrace -l | grep block_invalidatepage
 echo "===================================="
 echo "===================================="
-echo __rwlock_init
-sudo bpftrace -l | grep __rwlock_init
+echo block_page_mkwrite
+sudo bpftrace -l | grep block_page_mkwrite
 echo "===================================="
 echo "===================================="
-echo __set_page_dirty_nobuffers
-sudo bpftrace -l | grep __set_page_dirty_nobuffers
+echo block_read_full_page
+sudo bpftrace -l | grep block_read_full_page
 echo "===================================="
 echo "===================================="
-echo __test_set_page_writeback
-sudo bpftrace -l | grep __test_set_page_writeback
+echo block_write_end
+sudo bpftrace -l | grep block_write_end
 echo "===================================="
 echo "===================================="
-echo __var_waitqueue
-sudo bpftrace -l | grep __var_waitqueue
+echo clean_bdev_aliases
+sudo bpftrace -l | grep clean_bdev_aliases
 echo "===================================="
 echo "===================================="
-echo __wake_up
-sudo bpftrace -l | grep __wake_up
+echo clear_inode
+sudo bpftrace -l | grep clear_inode
 echo "===================================="
 echo "===================================="
-echo __warn_printk
-sudo bpftrace -l | grep __warn_printk
+echo clear_nlink
+sudo bpftrace -l | grep clear_nlink
 echo "===================================="
 echo "===================================="
-echo _cond_resched
-sudo bpftrace -l | grep _cond_resched
+echo create_empty_buffers
+sudo bpftrace -l | grep create_empty_buffers
 echo "===================================="
 echo "===================================="
-echo _copy_from_user
-sudo bpftrace -l | grep _copy_from_user
+echo current_time
+sudo bpftrace -l | grep current_time
 echo "===================================="
 echo "===================================="
-echo _copy_to_user
-sudo bpftrace -l | grep _copy_to_user
+echo d_find_any_alias
+sudo bpftrace -l | grep d_find_any_alias
 echo "===================================="
 echo "===================================="
-echo _raw_read_lock
-sudo bpftrace -l | grep _raw_read_lock
+echo d_instantiate
+sudo bpftrace -l | grep d_instantiate
 echo "===================================="
 echo "===================================="
-echo _raw_read_unlock
-sudo bpftrace -l | grep _raw_read_unlock
+echo d_instantiate_new
+sudo bpftrace -l | grep d_instantiate_new
 echo "===================================="
 echo "===================================="
-echo _raw_spin_lock
-sudo bpftrace -l | grep _raw_spin_lock
+echo d_make_root
+sudo bpftrace -l | grep d_make_root
 echo "===================================="
 echo "===================================="
-echo _raw_spin_lock_irqsave
-sudo bpftrace -l | grep _raw_spin_lock_irqsave
+echo d_obtain_alias
+sudo bpftrace -l | grep d_obtain_alias
 echo "===================================="
 echo "===================================="
-echo _raw_spin_trylock
-sudo bpftrace -l | grep _raw_spin_trylock
+echo d_path
+sudo bpftrace -l | grep d_path
 echo "===================================="
 echo "===================================="
-echo _raw_spin_unlock
-sudo bpftrace -l | grep _raw_spin_unlock
+echo d_splice_alias
+sudo bpftrace -l | grep d_splice_alias
 echo "===================================="
 echo "===================================="
-echo _raw_spin_unlock_irqrestore
-sudo bpftrace -l | grep _raw_spin_unlock_irqrestore
+echo d_tmpfile
+sudo bpftrace -l | grep d_tmpfile
 echo "===================================="
 echo "===================================="
-echo _raw_write_lock
-sudo bpftrace -l | grep _raw_write_lock
+echo dax_finish_sync_fault
+sudo bpftrace -l | grep dax_finish_sync_fault
 echo "===================================="
 echo "===================================="
-echo _raw_write_trylock
-sudo bpftrace -l | grep _raw_write_trylock
+echo dax_iomap_fault
+sudo bpftrace -l | grep dax_iomap_fault
 echo "===================================="
 echo "===================================="
-echo _raw_write_unlock
-sudo bpftrace -l | grep _raw_write_unlock
+echo dax_iomap_rw
+sudo bpftrace -l | grep dax_iomap_rw
 echo "===================================="
 echo "===================================="
-echo add_to_page_cache_lru
-sudo bpftrace -l | grep add_to_page_cache_lru
+echo dax_layout_busy_page
+sudo bpftrace -l | grep dax_layout_busy_page
 echo "===================================="
 echo "===================================="
-echo bcmp
-sudo bpftrace -l | grep bcmp
+echo dax_writeback_mapping_range
+sudo bpftrace -l | grep dax_writeback_mapping_range
 echo "===================================="
 echo "===================================="
-echo bdev_read_only
-sudo bpftrace -l | grep bdev_read_only
+echo dget_parent
+sudo bpftrace -l | grep dget_parent
 echo "===================================="
 echo "===================================="
-echo bdevname
-sudo bpftrace -l | grep bdevname
+echo dput
+sudo bpftrace -l | grep dput
 echo "===================================="
 echo "===================================="
-echo bio_add_page
-sudo bpftrace -l | grep bio_add_page
+echo drop_nlink
+sudo bpftrace -l | grep drop_nlink
 echo "===================================="
 echo "===================================="
-echo bio_alloc_bioset
-sudo bpftrace -l | grep bio_alloc_bioset
+echo fiemap_check_flags
+sudo bpftrace -l | grep fiemap_check_flags
 echo "===================================="
 echo "===================================="
-echo bio_associate_blkcg
-sudo bpftrace -l | grep bio_associate_blkcg
+echo fiemap_fill_next_extent
+sudo bpftrace -l | grep fiemap_fill_next_extent
 echo "===================================="
 echo "===================================="
-echo bio_devname
-sudo bpftrace -l | grep bio_devname
+echo file_path
+sudo bpftrace -l | grep file_path
 echo "===================================="
 echo "===================================="
-echo bio_put
-sudo bpftrace -l | grep bio_put
+echo file_remove_privs
+sudo bpftrace -l | grep file_remove_privs
 echo "===================================="
 echo "===================================="
-echo blk_finish_plug
-sudo bpftrace -l | grep blk_finish_plug
+echo file_update_time
+sudo bpftrace -l | grep file_update_time
 echo "===================================="
 echo "===================================="
-echo blk_start_plug
-sudo bpftrace -l | grep blk_start_plug
+echo find_inode_nowait
+sudo bpftrace -l | grep find_inode_nowait
 echo "===================================="
 echo "===================================="
-echo blk_status_to_errno
-sudo bpftrace -l | grep blk_status_to_errno
+echo fput
+sudo bpftrace -l | grep fput
 echo "===================================="
 echo "===================================="
-echo blkdev_issue_discard
-sudo bpftrace -l | grep blkdev_issue_discard
+echo freeze_bdev
+sudo bpftrace -l | grep freeze_bdev
 echo "===================================="
 echo "===================================="
-echo blkdev_issue_flush
-sudo bpftrace -l | grep blkdev_issue_flush
+echo generic_block_bmap
+sudo bpftrace -l | grep generic_block_bmap
 echo "===================================="
 echo "===================================="
-echo blkdev_issue_zeroout
-sudo bpftrace -l | grep blkdev_issue_zeroout
+echo generic_block_fiemap
+sudo bpftrace -l | grep generic_block_fiemap
 echo "===================================="
 echo "===================================="
-echo call_rcu_sched
-sudo bpftrace -l | grep call_rcu_sched
+echo generic_check_addressable
+sudo bpftrace -l | grep generic_check_addressable
 echo "===================================="
 echo "===================================="
-echo capable
-sudo bpftrace -l | grep capable
+echo generic_fh_to_dentry
+sudo bpftrace -l | grep generic_fh_to_dentry
 echo "===================================="
 echo "===================================="
-echo clear_page_dirty_for_io
-sudo bpftrace -l | grep clear_page_dirty_for_io
+echo generic_fh_to_parent
+sudo bpftrace -l | grep generic_fh_to_parent
 echo "===================================="
 echo "===================================="
-echo complete
-sudo bpftrace -l | grep complete
+echo generic_file_llseek_size
+sudo bpftrace -l | grep generic_file_llseek_size
 echo "===================================="
 echo "===================================="
-echo congestion_wait
-sudo bpftrace -l | grep congestion_wait
+echo generic_fillattr
+sudo bpftrace -l | grep generic_fillattr
 echo "===================================="
 echo "===================================="
-echo crypto_alloc_shash
-sudo bpftrace -l | grep crypto_alloc_shash
+echo generic_write_end
+sudo bpftrace -l | grep generic_write_end
 echo "===================================="
 echo "===================================="
-echo crypto_destroy_tfm
-sudo bpftrace -l | grep crypto_destroy_tfm
+echo get_acl
+sudo bpftrace -l | grep get_acl
 echo "===================================="
 echo "===================================="
-echo crypto_shash_update
-sudo bpftrace -l | grep crypto_shash_update
+echo iget_failed
+sudo bpftrace -l | grep iget_failed
 echo "===================================="
 echo "===================================="
-echo debug_check_no_locks_held
-sudo bpftrace -l | grep debug_check_no_locks_held
+echo iget_locked
+sudo bpftrace -l | grep iget_locked
 echo "===================================="
 echo "===================================="
-echo debug_lockdep_rcu_enabled
-sudo bpftrace -l | grep debug_lockdep_rcu_enabled
+echo igrab
+sudo bpftrace -l | grep igrab
 echo "===================================="
 echo "===================================="
-echo del_timer_sync
-sudo bpftrace -l | grep del_timer_sync
+echo ihold
+sudo bpftrace -l | grep ihold
 echo "===================================="
 echo "===================================="
-echo destroy_workqueue
-sudo bpftrace -l | grep destroy_workqueue
+echo inc_nlink
+sudo bpftrace -l | grep inc_nlink
 echo "===================================="
 echo "===================================="
-echo down_read
-sudo bpftrace -l | grep down_read
+echo init_special_inode
+sudo bpftrace -l | grep init_special_inode
 echo "===================================="
 echo "===================================="
-echo down_read_trylock
-sudo bpftrace -l | grep down_read_trylock
+echo inode_dio_wait
+sudo bpftrace -l | grep inode_dio_wait
 echo "===================================="
 echo "===================================="
-echo down_write
-sudo bpftrace -l | grep down_write
+echo inode_init_once
+sudo bpftrace -l | grep inode_init_once
 echo "===================================="
 echo "===================================="
-echo down_write_nested
-sudo bpftrace -l | grep down_write_nested
+echo inode_init_owner
+sudo bpftrace -l | grep inode_init_owner
 echo "===================================="
 echo "===================================="
-echo down_write_trylock
-sudo bpftrace -l | grep down_write_trylock
+echo inode_needs_sync
+sudo bpftrace -l | grep inode_needs_sync
 echo "===================================="
 echo "===================================="
-echo dump_page
-sudo bpftrace -l | grep dump_page
+echo inode_newsize_ok
+sudo bpftrace -l | grep inode_newsize_ok
 echo "===================================="
 echo "===================================="
-echo dump_stack
-sudo bpftrace -l | grep dump_stack
+echo inode_nohighmem
+sudo bpftrace -l | grep inode_nohighmem
 echo "===================================="
 echo "===================================="
-echo end_page_writeback
-sudo bpftrace -l | grep end_page_writeback
+echo inode_owner_or_capable
+sudo bpftrace -l | grep inode_owner_or_capable
 echo "===================================="
 echo "===================================="
-echo event_triggers_call
-sudo bpftrace -l | grep event_triggers_call
+echo inode_set_flags
+sudo bpftrace -l | grep inode_set_flags
 echo "===================================="
 echo "===================================="
-echo file_check_and_advance_wb_err
-sudo bpftrace -l | grep file_check_and_advance_wb_err
+echo insert_inode_locked
+sudo bpftrace -l | grep insert_inode_locked
 echo "===================================="
 echo "===================================="
-echo file_write_and_wait_range
-sudo bpftrace -l | grep file_write_and_wait_range
+echo invalidate_bdev
+sudo bpftrace -l | grep invalidate_bdev
 echo "===================================="
 echo "===================================="
-echo filemap_fault
-sudo bpftrace -l | grep filemap_fault
+echo invalidate_inode_buffers
+sudo bpftrace -l | grep invalidate_inode_buffers
 echo "===================================="
 echo "===================================="
-echo filemap_flush
-sudo bpftrace -l | grep filemap_flush
+echo iomap_seek_data
+sudo bpftrace -l | grep iomap_seek_data
 echo "===================================="
 echo "===================================="
-echo filemap_write_and_wait
-sudo bpftrace -l | grep filemap_write_and_wait
+echo iomap_seek_hole
+sudo bpftrace -l | grep iomap_seek_hole
 echo "===================================="
 echo "===================================="
-echo filemap_write_and_wait_range
-sudo bpftrace -l | grep filemap_write_and_wait_range
+echo iomap_zero_range
+sudo bpftrace -l | grep iomap_zero_range
 echo "===================================="
 echo "===================================="
-echo finish_wait
-sudo bpftrace -l | grep finish_wait
+echo iput
+sudo bpftrace -l | grep iput
 echo "===================================="
 echo "===================================="
-echo flush_workqueue
-sudo bpftrace -l | grep flush_workqueue
+echo is_bad_inode
+sudo bpftrace -l | grep is_bad_inode
 echo "===================================="
 echo "===================================="
-echo freezing_slow_path
-sudo bpftrace -l | grep freezing_slow_path
+echo kern_path
+sudo bpftrace -l | grep kern_path
 echo "===================================="
 echo "===================================="
-echo from_kgid
-sudo bpftrace -l | grep from_kgid
+echo ll_rw_block
+sudo bpftrace -l | grep ll_rw_block
 echo "===================================="
 echo "===================================="
-echo from_kgid_munged
-sudo bpftrace -l | grep from_kgid_munged
+echo lock_two_nondirectories
+sudo bpftrace -l | grep lock_two_nondirectories
 echo "===================================="
 echo "===================================="
-echo from_kprojid
-sudo bpftrace -l | grep from_kprojid
+echo make_bad_inode
+sudo bpftrace -l | grep make_bad_inode
 echo "===================================="
 echo "===================================="
-echo from_kuid
-sudo bpftrace -l | grep from_kuid
+echo mark_buffer_dirty
+sudo bpftrace -l | grep mark_buffer_dirty
 echo "===================================="
 echo "===================================="
-echo from_kuid_munged
-sudo bpftrace -l | grep from_kuid_munged
+echo mark_buffer_dirty_inode
+sudo bpftrace -l | grep mark_buffer_dirty_inode
 echo "===================================="
 echo "===================================="
-echo fs_dax_get_by_bdev
-sudo bpftrace -l | grep fs_dax_get_by_bdev
+echo mb_cache_create
+sudo bpftrace -l | grep mb_cache_create
 echo "===================================="
 echo "===================================="
-echo generate_random_uuid
-sudo bpftrace -l | grep generate_random_uuid
+echo mb_cache_destroy
+sudo bpftrace -l | grep mb_cache_destroy
 echo "===================================="
 echo "===================================="
-echo generic_file_read_iter
-sudo bpftrace -l | grep generic_file_read_iter
+echo mb_cache_entry_create
+sudo bpftrace -l | grep mb_cache_entry_create
 echo "===================================="
 echo "===================================="
-echo generic_write_checks
-sudo bpftrace -l | grep generic_write_checks
+echo mb_cache_entry_delete
+sudo bpftrace -l | grep mb_cache_entry_delete
 echo "===================================="
 echo "===================================="
-echo generic_writepages
-sudo bpftrace -l | grep generic_writepages
+echo mb_cache_entry_find_first
+sudo bpftrace -l | grep mb_cache_entry_find_first
 echo "===================================="
 echo "===================================="
-echo get_zeroed_page
-sudo bpftrace -l | grep get_zeroed_page
+echo mb_cache_entry_find_next
+sudo bpftrace -l | grep mb_cache_entry_find_next
 echo "===================================="
 echo "===================================="
-echo grab_cache_page_write_begin
-sudo bpftrace -l | grep grab_cache_page_write_begin
+echo mb_cache_entry_get
+sudo bpftrace -l | grep mb_cache_entry_get
 echo "===================================="
 echo "===================================="
-echo in_group_p
-sudo bpftrace -l | grep in_group_p
+echo mb_cache_entry_touch
+sudo bpftrace -l | grep mb_cache_entry_touch
 echo "===================================="
 echo "===================================="
-echo init_inodecache
-sudo bpftrace -l | grep init_inodecache
+echo mnt_drop_write_file
+sudo bpftrace -l | grep mnt_drop_write_file
 echo "===================================="
 echo "===================================="
-echo init_timer_key
-sudo bpftrace -l | grep init_timer_key
+echo mnt_want_write_file
+sudo bpftrace -l | grep mnt_want_write_file
 echo "===================================="
 echo "===================================="
-echo init_wait_entry
-sudo bpftrace -l | grep init_wait_entry
+echo mount_bdev
+sudo bpftrace -l | grep mount_bdev
 echo "===================================="
 echo "===================================="
-echo init_wait_var_entry
-sudo bpftrace -l | grep init_wait_var_entry
+echo new_inode
+sudo bpftrace -l | grep new_inode
 echo "===================================="
 echo "===================================="
-echo kobject_create_and_add
-sudo bpftrace -l | grep kobject_create_and_add
+echo page_zero_new_buffers
+sudo bpftrace -l | grep page_zero_new_buffers
 echo "===================================="
 echo "===================================="
-echo kobject_del
-sudo bpftrace -l | grep kobject_del
+echo path_put
+sudo bpftrace -l | grep path_put
 echo "===================================="
 echo "===================================="
-echo kobject_init_and_add
-sudo bpftrace -l | grep kobject_init_and_add
+echo posix_acl_alloc
+sudo bpftrace -l | grep posix_acl_alloc
 echo "===================================="
 echo "===================================="
-echo kobject_put
-sudo bpftrace -l | grep kobject_put
+echo posix_acl_chmod
+sudo bpftrace -l | grep posix_acl_chmod
 echo "===================================="
 echo "===================================="
-echo kstrdup
-sudo bpftrace -l | grep kstrdup
+echo posix_acl_create
+sudo bpftrace -l | grep posix_acl_create
 echo "===================================="
 echo "===================================="
-echo kstrndup
-sudo bpftrace -l | grep kstrndup
+echo posix_acl_update_mode
+sudo bpftrace -l | grep posix_acl_update_mode
 echo "===================================="
 echo "===================================="
-echo kthread_create_on_node
-sudo bpftrace -l | grep kthread_create_on_node
+echo register_filesystem
+sudo bpftrace -l | grep register_filesystem
 echo "===================================="
 echo "===================================="
-echo kthread_should_stop
-sudo bpftrace -l | grep kthread_should_stop
+echo sb_min_blocksize
+sudo bpftrace -l | grep sb_min_blocksize
 echo "===================================="
 echo "===================================="
-echo kthread_stop
-sudo bpftrace -l | grep kthread_stop
+echo sb_set_blocksize
+sudo bpftrace -l | grep sb_set_blocksize
 echo "===================================="
 echo "===================================="
-echo ktime_get
-sudo bpftrace -l | grep ktime_get
+echo seq_escape
+sudo bpftrace -l | grep seq_escape
 echo "===================================="
 echo "===================================="
-echo ktime_get_real_seconds
-sudo bpftrace -l | grep ktime_get_real_seconds
+echo seq_printf
+sudo bpftrace -l | grep seq_printf
 echo "===================================="
 echo "===================================="
-echo ktime_get_with_offset
-sudo bpftrace -l | grep ktime_get_with_offset
+echo seq_putc
+sudo bpftrace -l | grep seq_putc
 echo "===================================="
 echo "===================================="
-echo lock_acquire
-sudo bpftrace -l | grep lock_acquire
+echo seq_puts
+sudo bpftrace -l | grep seq_puts
 echo "===================================="
 echo "===================================="
-echo lock_is_held_type
-sudo bpftrace -l | grep lock_is_held_type
+echo set_blocksize
+sudo bpftrace -l | grep set_blocksize
 echo "===================================="
-echo "===================================="
-echo lock_release
-sudo bpftrace -l | grep lock_release
-echo "===================================="
-echo "===================================="
-echo lockdep_init_map
-sudo bpftrace -l | grep lockdep_init_map
-echo "===================================="
-echo "===================================="
-echo lockdep_rcu_suspicious
-sudo bpftrace -l | grep lockdep_rcu_suspicious
-echo "===================================="
-echo "===================================="
-echo make_kgid
-sudo bpftrace -l | grep make_kgid
-echo "===================================="
-echo "===================================="
-echo make_kprojid
-sudo bpftrace -l | grep make_kprojid
-echo "===================================="
-echo "===================================="
-echo make_kuid
-sudo bpftrace -l | grep make_kuid
-echo "===================================="
-echo "===================================="
-echo mapping_tagged
-sudo bpftrace -l | grep mapping_tagged
-echo "===================================="
-echo "===================================="
-echo mod_timer
-sudo bpftrace -l | grep mod_timer
-echo "===================================="
-echo "===================================="
-echo mutex_lock_nested
-sudo bpftrace -l | grep mutex_lock_nested
-echo "===================================="
-echo "===================================="
-echo mutex_unlock
-sudo bpftrace -l | grep mutex_unlock
-echo "===================================="
-echo "===================================="
-echo nsecs_to_jiffies
-sudo bpftrace -l | grep nsecs_to_jiffies
-echo "===================================="
-echo "===================================="
-echo page_cache_sync_readahead
-sudo bpftrace -l | grep page_cache_sync_readahead
-echo "===================================="
-echo "===================================="
-echo page_mapped
-sudo bpftrace -l | grep page_mapped
-echo "===================================="
-echo "===================================="
-echo pagecache_get_page
-sudo bpftrace -l | grep pagecache_get_page
-echo "===================================="
-echo "===================================="
-echo pagecache_isize_extended
-sudo bpftrace -l | grep pagecache_isize_extended
-echo "===================================="
-echo "===================================="
-echo pagevec_lookup_range
-sudo bpftrace -l | grep pagevec_lookup_range
-echo "===================================="
-echo "===================================="
-echo pagevec_lookup_range_tag
-sudo bpftrace -l | grep pagevec_lookup_range_tag
-echo "===================================="
-echo "===================================="
-echo panic
-sudo bpftrace -l | grep panic
-echo "===================================="
-echo "===================================="
-echo parse_options
-sudo bpftrace -l | grep parse_options
-echo "===================================="
-echo "===================================="
-echo percpu_down_write
-sudo bpftrace -l | grep percpu_down_write
-echo "===================================="
-echo "===================================="
-echo percpu_free_rwsem
-sudo bpftrace -l | grep percpu_free_rwsem
-echo "===================================="
-echo "===================================="
-echo percpu_up_write
-sudo bpftrace -l | grep percpu_up_write
-echo "===================================="
-echo "===================================="
-echo perf_trace_buf_alloc
-sudo bpftrace -l | grep perf_trace_buf_alloc
-echo "===================================="
-echo "===================================="
-echo perf_trace_run_bpf_submit
-sudo bpftrace -l | grep perf_trace_run_bpf_submit
-echo "===================================="
-echo "===================================="
-echo prandom_u32
-sudo bpftrace -l | grep prandom_u32
-echo "===================================="
-echo "===================================="
-echo prepare_to_wait_event
-sudo bpftrace -l | grep prepare_to_wait_event
-echo "===================================="
-echo "===================================="
-echo print_hex_dump
-sudo bpftrace -l | grep print_hex_dump
-echo "===================================="
-echo "===================================="
-echo printk
-sudo bpftrace -l | grep printk
-echo "===================================="
-echo "===================================="
-echo put_dax
-sudo bpftrace -l | grep put_dax
-echo "===================================="
-echo "===================================="
-echo queue_work_on
-sudo bpftrace -l | grep queue_work_on
-echo "===================================="
-echo "===================================="
-echo rcu_barrier
-sudo bpftrace -l | grep rcu_barrier
-echo "===================================="
-echo "===================================="
-echo rcu_is_watching
-sudo bpftrace -l | grep rcu_is_watching
-echo "===================================="
-echo "===================================="
-echo rcu_lock_acquire
-sudo bpftrace -l | grep rcu_lock_acquire
-echo "===================================="
-echo "===================================="
-echo rcu_lock_release
-sudo bpftrace -l | grep rcu_lock_release
-echo "===================================="
-echo "===================================="
-echo rcu_read_lock_held
-sudo bpftrace -l | grep rcu_read_lock_held
-echo "===================================="
-echo "===================================="
-echo rcu_read_lock_sched_held
-sudo bpftrace -l | grep rcu_read_lock_sched_held
-echo "===================================="
-echo "===================================="
-echo rcu_sync_lockdep_assert
-sudo bpftrace -l | grep rcu_sync_lockdep_assert
-echo "===================================="
-echo "===================================="
-echo read_cache_page
-sudo bpftrace -l | grep read_cache_page
-echo "===================================="
-echo "===================================="
-echo redirty_page_for_writepage
-sudo bpftrace -l | grep redirty_page_for_writepage
-echo "===================================="
-echo "===================================="
-echo register_shrinker
-sudo bpftrace -l | grep register_shrinker
-echo "===================================="
-echo "===================================="
-echo schedule
-sudo bpftrace -l | grep schedule
-echo "===================================="
-echo "===================================="
-echo schedule_timeout_interruptible
-sudo bpftrace -l | grep schedule_timeout_interruptible
-echo "===================================="
-echo "===================================="
-echo schedule_timeout_uninterruptible
-sudo bpftrace -l | grep schedule_timeout_uninterruptible
-echo "===================================="
-echo "===================================="
-echo security_inode_init_security
-sudo bpftrace -l | grep security_inode_init_security
-echo "===================================="
-echo "===================================="
-echo set_task_ioprio
-sudo bpftrace -l | grep set_task_ioprio
-echo "===================================="
-echo "===================================="
-echo snprintf
-sudo bpftrace -l | grep snprintf
-echo "===================================="
-echo "===================================="
-echo submit_bio
-sudo bpftrace -l | grep submit_bio
-echo "===================================="
-echo "===================================="
-echo submit_bio_wait
-sudo bpftrace -l | grep submit_bio_wait
-echo "===================================="
-echo "===================================="
-echo synchronize_sched
-sudo bpftrace -l | grep synchronize_sched
-echo "===================================="
-echo "===================================="
-echo tag_pages_for_writeback
-sudo bpftrace -l | grep tag_pages_for_writeback
-echo "===================================="
-echo "===================================="
-echo truncate_inode_pages
-sudo bpftrace -l | grep truncate_inode_pages
-echo "===================================="
-echo "===================================="
-echo truncate_inode_pages_final
-sudo bpftrace -l | grep truncate_inode_pages_final
-echo "===================================="
-echo "===================================="
-echo truncate_pagecache
-sudo bpftrace -l | grep truncate_pagecache
-echo "===================================="
-echo "===================================="
-echo truncate_pagecache_range
-sudo bpftrace -l | grep truncate_pagecache_range
-echo "===================================="
-echo "===================================="
-echo try_to_release_page
-sudo bpftrace -l | grep try_to_release_page
-echo "===================================="
-echo "===================================="
-echo unlock_page
-sudo bpftrace -l | grep unlock_page
-echo "===================================="
-echo "===================================="
-echo unregister_shrinker
-sudo bpftrace -l | grep unregister_shrinker
-echo "===================================="
-echo "===================================="
-echo up_read
-sudo bpftrace -l | grep up_read
-echo "===================================="
-echo "===================================="
-echo up_write
-sudo bpftrace -l | grep up_write
-echo "===================================="
-echo "===================================="
-echo wait_for_completion
-sudo bpftrace -l | grep wait_for_completion
-echo "===================================="
-echo "===================================="
-echo wait_for_stable_page
-sudo bpftrace -l | grep wait_for_stable_page
-echo "===================================="
-echo "===================================="
-echo wait_on_page_bit
-sudo bpftrace -l | grep wait_on_page_bit
-echo "===================================="
-echo "===================================="
-echo wake_up_bit
-sudo bpftrace -l | grep wake_up_bit
-echo "===================================="
-echo "===================================="
-echo wake_up_process
-sudo bpftrace -l | grep wake_up_process
-echo "===================================="
+
+
+
+# echo "===================================="
+# echo set_cached_acl
+# sudo bpftrace -l | grep set_cached_acl
+# echo "===================================="
+# echo "===================================="
+# echo set_nlink
+# sudo bpftrace -l | grep set_nlink
+# echo "===================================="
+# echo "===================================="
+# echo setattr_copy
+# sudo bpftrace -l | grep setattr_copy
+# echo "===================================="
+# echo "===================================="
+# echo setattr_prepare
+# sudo bpftrace -l | grep setattr_prepare
+# echo "===================================="
+# echo "===================================="
+# echo submit_bh
+# sudo bpftrace -l | grep submit_bh
+# echo "===================================="
+# echo "===================================="
+# echo sync_blockdev
+# sudo bpftrace -l | grep sync_blockdev
+# echo "===================================="
+# echo "===================================="
+# echo sync_dirty_buffer
+# sudo bpftrace -l | grep sync_dirty_buffer
+# echo "===================================="
+# echo "===================================="
+# echo sync_filesystem
+# sudo bpftrace -l | grep sync_filesystem
+# echo "===================================="
+# echo "===================================="
+# echo sync_inode_metadata
+# sudo bpftrace -l | grep sync_inode_metadata
+# echo "===================================="
+# echo "===================================="
+# echo sync_mapping_buffers
+# sudo bpftrace -l | grep sync_mapping_buffers
+# echo "===================================="
+# echo "===================================="
+# echo thaw_bdev
+# sudo bpftrace -l | grep thaw_bdev
+# echo "===================================="
+# echo "===================================="
+# echo touch_atime
+# sudo bpftrace -l | grep touch_atime
+# echo "===================================="
+# echo "===================================="
+# echo try_to_free_buffers
+# sudo bpftrace -l | grep try_to_free_buffers
+# echo "===================================="
+# echo "===================================="
+# echo try_to_writeback_inodes_sb
+# sudo bpftrace -l | grep try_to_writeback_inodes_sb
+# echo "===================================="
+# echo "===================================="
+# echo unlock_buffer
+# sudo bpftrace -l | grep unlock_buffer
+# echo "===================================="
+# echo "===================================="
+# echo unlock_new_inode
+# sudo bpftrace -l | grep unlock_new_inode
+# echo "===================================="
+# echo "===================================="
+# echo unlock_two_nondirectories
+# sudo bpftrace -l | grep unlock_two_nondirectories
+# echo "===================================="
+# echo "===================================="
+# echo unregister_filesystem
+# sudo bpftrace -l | grep unregister_filesystem
+# echo "===================================="
+# echo "===================================="
+# echo vfs_fsync_range
+# sudo bpftrace -l | grep vfs_fsync_range
+# echo "===================================="
+# echo "===================================="
+# echo vfs_setpos
+# sudo bpftrace -l | grep vfs_setpos
+# echo "===================================="
+# echo "===================================="
+# echo wbc_account_i
+# sudo bpftrace -l | grep wbc_account_i
+# echo "===================================="

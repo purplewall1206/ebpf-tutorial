@@ -1219,11 +1219,6 @@ kprobe:generic_writepages
 kfunc:generic_writepages
 ====================================
 ====================================
-get_zeroed_page
-kprobe:get_zeroed_page
-kfunc:get_zeroed_page
-====================================
-====================================
 grab_cache_page_write_begin
 kprobe:grab_cache_page_write_begin
 kfunc:grab_cache_page_write_begin
