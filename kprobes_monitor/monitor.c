@@ -949,7 +949,7 @@ int generic_file_llseek_size_ext4_monitor(struct kprobe *p, struct pt_regs *regs
 int generic_file_read_iter_ext4_monitor(struct kprobe *p, struct pt_regs *regs) 
 {
     char name_sym[100];
-    pr_info("<%s> pre_handler: p->addr = %pF, ip = %lx, flags = 0x%lx\n",
+    pr_info("======================================\n<%s> pre_handler: p->addr = %pF, ip = %lx, flags = 0x%lx\n",
         p->symbol_name, p->addr, regs->ip, regs->flags);
     if (!is_called_by_ext4()) 
         return 0;
