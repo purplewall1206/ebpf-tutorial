@@ -1,0 +1,1209 @@
+#define EXT4_ALLOC_INODE_PROBE 0
+#define EXT4_BMAP_PROBE 1
+#define EXT4_DA_INVALIDATEPAGE_PROBE 2
+#define EXT4_DA_WRITE_BEGIN_PROBE 3
+#define EXT4_DA_WRITE_END_PROBE 4
+#define EXT4_DAX_WRITEPAGES_PROBE 5
+#define EXT4_DESTROY_INODE_PROBE 6
+#define EXT4_DIR_LLSEEK_PROBE 7
+#define EXT4_DIR_OPEN_PROBE 8
+#define EXT4_DIRECT_IO_PROBE 9
+#define EXT4_DIRTY_INODE_PROBE 10
+#define EXT4_DROP_INODE_PROBE 11
+#define EXT4_EVICT_INODE_PROBE 12
+#define EXT4_FALLOCATE_PROBE 13
+#define EXT4_FH_TO_DENTRY_PROBE 14
+#define EXT4_FH_TO_PARENT_PROBE 15
+#define EXT4_FIEMAP_PROBE 16
+#define EXT4_FILE_GETATTR_PROBE 17
+#define EXT4_FILE_MMAP_PROBE 18
+#define EXT4_FILE_OPEN_PROBE 19
+#define EXT4_FILE_READ_ITER_PROBE 20
+#define EXT4_FILE_WRITE_ITER_PROBE 21
+#define EXT4_FILEMAP_FAULT_PROBE 22
+#define EXT4_FREEZE_PROBE 23
+#define EXT4_GET_ACL_PROBE 24
+#define EXT4_GET_PARENT_PROBE 25
+#define EXT4_INVALIDATEPAGE_PROBE 26
+#define EXT4_IOCTL_PROBE 27
+#define EXT4_IOMAP_BEGIN_PROBE 28
+#define EXT4_IOMAP_END_PROBE 29
+#define EXT4_LISTXATTR_PROBE 30
+#define EXT4_LLSEEK_PROBE 31
+#define EXT4_MB_SEQ_GROUPS_NEXT_PROBE 32
+#define EXT4_MB_SEQ_GROUPS_SHOW_PROBE 33
+#define EXT4_MB_SEQ_GROUPS_START_PROBE 34
+#define EXT4_MB_SEQ_GROUPS_STOP_PROBE 35
+#define EXT4_MOUNT_PROBE 36
+#define EXT4_NFS_COMMIT_METADATA_PROBE 37
+#define EXT4_PAGE_MKWRITE_PROBE 38
+#define EXT4_PUT_SUPER_PROBE 39
+#define EXT4_READDIR_PROBE 40
+#define EXT4_READPAGE_PROBE 41
+#define EXT4_READPAGES_PROBE 42
+#define EXT4_RELEASE_DIR_PROBE 43
+#define EXT4_RELEASE_FILE_PROBE 44
+#define EXT4_RELEASEPAGE_PROBE 45
+#define EXT4_REMOUNT_PROBE 46
+#define EXT4_SET_ACL_PROBE 47
+#define EXT4_SET_PAGE_DIRTY_PROBE 48
+#define EXT4_SETATTR_PROBE 49
+#define EXT4_SHOW_OPTIONS_PROBE 50
+#define EXT4_STATFS_PROBE 51
+#define EXT4_SYNC_FILE_PROBE 52
+#define EXT4_SYNC_FS_PROBE 53
+#define EXT4_UNFREEZE_PROBE 54
+#define EXT4_WRITE_BEGIN_PROBE 55
+#define EXT4_WRITE_END_PROBE 56
+#define EXT4_WRITE_INODE_PROBE 57
+#define EXT4_WRITEPAGE_PROBE 58
+#define EXT4_WRITEPAGE_PROBE 59
+
+
+int ext4_alloc_inode_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_alloc_inode_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_bmap_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_bmap_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_da_invalidatepage_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_da_invalidatepage_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_da_write_begin_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_da_write_begin_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_da_write_end_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_da_write_end_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_dax_writepages_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_dax_writepages_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_destroy_inode_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_destroy_inode_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_dir_llseek_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_dir_llseek_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_dir_open_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_dir_open_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_direct_IO_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_direct_IO_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_dirty_inode_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_dirty_inode_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_drop_inode_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_drop_inode_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_evict_inode_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_evict_inode_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_fallocate_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_fallocate_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_fh_to_dentry_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_fh_to_dentry_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_fh_to_parent_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_fh_to_parent_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_fiemap_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_fiemap_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_file_getattr_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_file_getattr_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_file_mmap_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_file_mmap_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_file_open_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_file_open_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_file_read_iter_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_file_read_iter_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_file_write_iter_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_file_write_iter_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_filemap_fault_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_filemap_fault_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_freeze_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_freeze_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_get_acl_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_get_acl_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_get_parent_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_get_parent_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_invalidatepage_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_invalidatepage_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_ioctl_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_ioctl_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_iomap_begin_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_iomap_begin_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_iomap_end_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_iomap_end_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_listxattr_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_listxattr_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_llseek_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_llseek_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_mb_seq_groups_next_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_mb_seq_groups_next_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_mb_seq_groups_show_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_mb_seq_groups_show_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_mb_seq_groups_start_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_mb_seq_groups_start_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_mb_seq_groups_stop_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_mb_seq_groups_stop_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_mount_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_mount_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_nfs_commit_metadata_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_nfs_commit_metadata_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_page_mkwrite_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_page_mkwrite_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_put_super_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_put_super_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_readdir_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_readdir_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_readpage_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_readpage_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_readpages_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_readpages_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_release_dir_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_release_dir_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_release_file_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_release_file_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_releasepage_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_releasepage_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_remount_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_remount_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_set_acl_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_set_acl_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_set_page_dirty_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_set_page_dirty_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_setattr_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_setattr_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_show_options_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_show_options_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_statfs_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_statfs_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_sync_file_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_sync_file_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_sync_fs_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_sync_fs_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_unfreeze_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_unfreeze_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_write_begin_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_write_begin_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_write_end_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_write_end_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_write_inode_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_write_inode_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_writepage_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_writepage_post(struct kprobe *p, struct pt_regs *regs);
+
+int ext4_writepage_pre(struct kprobe *p, struct pt_regs *regs);
+int ext4_writepage_post(struct kprobe *p, struct pt_regs *regs);
+
+
+static struct kprobe ext4_alloc_inode_kp = {
+    .symbol_name = "ext4_alloc_inode",
+    .pre_handler = ext4_alloc_inode_pre,
+    .post_handler = ext4_alloc_inode_post,
+};
+
+static struct kprobe ext4_bmap_kp = {
+    .symbol_name = "ext4_bmap",
+    .pre_handler = ext4_bmap_pre,
+    .post_handler = ext4_bmap_post,
+};
+
+static struct kprobe ext4_da_invalidatepage_kp = {
+    .symbol_name = "ext4_da_invalidatepage",
+    .pre_handler = ext4_da_invalidatepage_pre,
+    .post_handler = ext4_da_invalidatepage_post,
+};
+
+static struct kprobe ext4_da_write_begin_kp = {
+    .symbol_name = "ext4_da_write_begin",
+    .pre_handler = ext4_da_write_begin_pre,
+    .post_handler = ext4_da_write_begin_post,
+};
+
+static struct kprobe ext4_da_write_end_kp = {
+    .symbol_name = "ext4_da_write_end",
+    .pre_handler = ext4_da_write_end_pre,
+    .post_handler = ext4_da_write_end_post,
+};
+
+static struct kprobe ext4_dax_writepages_kp = {
+    .symbol_name = "ext4_dax_writepages",
+    .pre_handler = ext4_dax_writepages_pre,
+    .post_handler = ext4_dax_writepages_post,
+};
+
+static struct kprobe ext4_destroy_inode_kp = {
+    .symbol_name = "ext4_destroy_inode",
+    .pre_handler = ext4_destroy_inode_pre,
+    .post_handler = ext4_destroy_inode_post,
+};
+
+static struct kprobe ext4_dir_llseek_kp = {
+    .symbol_name = "ext4_dir_llseek",
+    .pre_handler = ext4_dir_llseek_pre,
+    .post_handler = ext4_dir_llseek_post,
+};
+
+static struct kprobe ext4_dir_open_kp = {
+    .symbol_name = "ext4_dir_open",
+    .pre_handler = ext4_dir_open_pre,
+    .post_handler = ext4_dir_open_post,
+};
+
+static struct kprobe ext4_direct_IO_kp = {
+    .symbol_name = "ext4_direct_IO",
+    .pre_handler = ext4_direct_IO_pre,
+    .post_handler = ext4_direct_IO_post,
+};
+
+static struct kprobe ext4_dirty_inode_kp = {
+    .symbol_name = "ext4_dirty_inode",
+    .pre_handler = ext4_dirty_inode_pre,
+    .post_handler = ext4_dirty_inode_post,
+};
+
+static struct kprobe ext4_drop_inode_kp = {
+    .symbol_name = "ext4_drop_inode",
+    .pre_handler = ext4_drop_inode_pre,
+    .post_handler = ext4_drop_inode_post,
+};
+
+static struct kprobe ext4_evict_inode_kp = {
+    .symbol_name = "ext4_evict_inode",
+    .pre_handler = ext4_evict_inode_pre,
+    .post_handler = ext4_evict_inode_post,
+};
+
+static struct kprobe ext4_fallocate_kp = {
+    .symbol_name = "ext4_fallocate",
+    .pre_handler = ext4_fallocate_pre,
+    .post_handler = ext4_fallocate_post,
+};
+
+static struct kprobe ext4_fh_to_dentry_kp = {
+    .symbol_name = "ext4_fh_to_dentry",
+    .pre_handler = ext4_fh_to_dentry_pre,
+    .post_handler = ext4_fh_to_dentry_post,
+};
+
+static struct kprobe ext4_fh_to_parent_kp = {
+    .symbol_name = "ext4_fh_to_parent",
+    .pre_handler = ext4_fh_to_parent_pre,
+    .post_handler = ext4_fh_to_parent_post,
+};
+
+static struct kprobe ext4_fiemap_kp = {
+    .symbol_name = "ext4_fiemap",
+    .pre_handler = ext4_fiemap_pre,
+    .post_handler = ext4_fiemap_post,
+};
+
+static struct kprobe ext4_file_getattr_kp = {
+    .symbol_name = "ext4_file_getattr",
+    .pre_handler = ext4_file_getattr_pre,
+    .post_handler = ext4_file_getattr_post,
+};
+
+static struct kprobe ext4_file_mmap_kp = {
+    .symbol_name = "ext4_file_mmap",
+    .pre_handler = ext4_file_mmap_pre,
+    .post_handler = ext4_file_mmap_post,
+};
+
+static struct kprobe ext4_file_open_kp = {
+    .symbol_name = "ext4_file_open",
+    .pre_handler = ext4_file_open_pre,
+    .post_handler = ext4_file_open_post,
+};
+
+static struct kprobe ext4_file_read_iter_kp = {
+    .symbol_name = "ext4_file_read_iter",
+    .pre_handler = ext4_file_read_iter_pre,
+    .post_handler = ext4_file_read_iter_post,
+};
+
+static struct kprobe ext4_file_write_iter_kp = {
+    .symbol_name = "ext4_file_write_iter",
+    .pre_handler = ext4_file_write_iter_pre,
+    .post_handler = ext4_file_write_iter_post,
+};
+
+static struct kprobe ext4_filemap_fault_kp = {
+    .symbol_name = "ext4_filemap_fault",
+    .pre_handler = ext4_filemap_fault_pre,
+    .post_handler = ext4_filemap_fault_post,
+};
+
+static struct kprobe ext4_freeze_kp = {
+    .symbol_name = "ext4_freeze",
+    .pre_handler = ext4_freeze_pre,
+    .post_handler = ext4_freeze_post,
+};
+
+static struct kprobe ext4_get_acl_kp = {
+    .symbol_name = "ext4_get_acl",
+    .pre_handler = ext4_get_acl_pre,
+    .post_handler = ext4_get_acl_post,
+};
+
+static struct kprobe ext4_get_parent_kp = {
+    .symbol_name = "ext4_get_parent",
+    .pre_handler = ext4_get_parent_pre,
+    .post_handler = ext4_get_parent_post,
+};
+
+static struct kprobe ext4_invalidatepage_kp = {
+    .symbol_name = "ext4_invalidatepage",
+    .pre_handler = ext4_invalidatepage_pre,
+    .post_handler = ext4_invalidatepage_post,
+};
+
+static struct kprobe ext4_ioctl_kp = {
+    .symbol_name = "ext4_ioctl",
+    .pre_handler = ext4_ioctl_pre,
+    .post_handler = ext4_ioctl_post,
+};
+
+static struct kprobe ext4_iomap_begin_kp = {
+    .symbol_name = "ext4_iomap_begin",
+    .pre_handler = ext4_iomap_begin_pre,
+    .post_handler = ext4_iomap_begin_post,
+};
+
+static struct kprobe ext4_iomap_end_kp = {
+    .symbol_name = "ext4_iomap_end",
+    .pre_handler = ext4_iomap_end_pre,
+    .post_handler = ext4_iomap_end_post,
+};
+
+static struct kprobe ext4_listxattr_kp = {
+    .symbol_name = "ext4_listxattr",
+    .pre_handler = ext4_listxattr_pre,
+    .post_handler = ext4_listxattr_post,
+};
+
+static struct kprobe ext4_llseek_kp = {
+    .symbol_name = "ext4_llseek",
+    .pre_handler = ext4_llseek_pre,
+    .post_handler = ext4_llseek_post,
+};
+
+static struct kprobe ext4_mb_seq_groups_next_kp = {
+    .symbol_name = "ext4_mb_seq_groups_next",
+    .pre_handler = ext4_mb_seq_groups_next_pre,
+    .post_handler = ext4_mb_seq_groups_next_post,
+};
+
+static struct kprobe ext4_mb_seq_groups_show_kp = {
+    .symbol_name = "ext4_mb_seq_groups_show",
+    .pre_handler = ext4_mb_seq_groups_show_pre,
+    .post_handler = ext4_mb_seq_groups_show_post,
+};
+
+static struct kprobe ext4_mb_seq_groups_start_kp = {
+    .symbol_name = "ext4_mb_seq_groups_start",
+    .pre_handler = ext4_mb_seq_groups_start_pre,
+    .post_handler = ext4_mb_seq_groups_start_post,
+};
+
+static struct kprobe ext4_mb_seq_groups_stop_kp = {
+    .symbol_name = "ext4_mb_seq_groups_stop",
+    .pre_handler = ext4_mb_seq_groups_stop_pre,
+    .post_handler = ext4_mb_seq_groups_stop_post,
+};
+
+static struct kprobe ext4_mount_kp = {
+    .symbol_name = "ext4_mount",
+    .pre_handler = ext4_mount_pre,
+    .post_handler = ext4_mount_post,
+};
+
+static struct kprobe ext4_nfs_commit_metadata_kp = {
+    .symbol_name = "ext4_nfs_commit_metadata",
+    .pre_handler = ext4_nfs_commit_metadata_pre,
+    .post_handler = ext4_nfs_commit_metadata_post,
+};
+
+static struct kprobe ext4_page_mkwrite_kp = {
+    .symbol_name = "ext4_page_mkwrite",
+    .pre_handler = ext4_page_mkwrite_pre,
+    .post_handler = ext4_page_mkwrite_post,
+};
+
+static struct kprobe ext4_put_super_kp = {
+    .symbol_name = "ext4_put_super",
+    .pre_handler = ext4_put_super_pre,
+    .post_handler = ext4_put_super_post,
+};
+
+static struct kprobe ext4_readdir_kp = {
+    .symbol_name = "ext4_readdir",
+    .pre_handler = ext4_readdir_pre,
+    .post_handler = ext4_readdir_post,
+};
+
+static struct kprobe ext4_readpage_kp = {
+    .symbol_name = "ext4_readpage",
+    .pre_handler = ext4_readpage_pre,
+    .post_handler = ext4_readpage_post,
+};
+
+static struct kprobe ext4_readpages_kp = {
+    .symbol_name = "ext4_readpages",
+    .pre_handler = ext4_readpages_pre,
+    .post_handler = ext4_readpages_post,
+};
+
+static struct kprobe ext4_release_dir_kp = {
+    .symbol_name = "ext4_release_dir",
+    .pre_handler = ext4_release_dir_pre,
+    .post_handler = ext4_release_dir_post,
+};
+
+static struct kprobe ext4_release_file_kp = {
+    .symbol_name = "ext4_release_file",
+    .pre_handler = ext4_release_file_pre,
+    .post_handler = ext4_release_file_post,
+};
+
+static struct kprobe ext4_releasepage_kp = {
+    .symbol_name = "ext4_releasepage",
+    .pre_handler = ext4_releasepage_pre,
+    .post_handler = ext4_releasepage_post,
+};
+
+static struct kprobe ext4_remount_kp = {
+    .symbol_name = "ext4_remount",
+    .pre_handler = ext4_remount_pre,
+    .post_handler = ext4_remount_post,
+};
+
+static struct kprobe ext4_set_acl_kp = {
+    .symbol_name = "ext4_set_acl",
+    .pre_handler = ext4_set_acl_pre,
+    .post_handler = ext4_set_acl_post,
+};
+
+static struct kprobe ext4_set_page_dirty_kp = {
+    .symbol_name = "ext4_set_page_dirty",
+    .pre_handler = ext4_set_page_dirty_pre,
+    .post_handler = ext4_set_page_dirty_post,
+};
+
+static struct kprobe ext4_setattr_kp = {
+    .symbol_name = "ext4_setattr",
+    .pre_handler = ext4_setattr_pre,
+    .post_handler = ext4_setattr_post,
+};
+
+static struct kprobe ext4_show_options_kp = {
+    .symbol_name = "ext4_show_options",
+    .pre_handler = ext4_show_options_pre,
+    .post_handler = ext4_show_options_post,
+};
+
+static struct kprobe ext4_statfs_kp = {
+    .symbol_name = "ext4_statfs",
+    .pre_handler = ext4_statfs_pre,
+    .post_handler = ext4_statfs_post,
+};
+
+static struct kprobe ext4_sync_file_kp = {
+    .symbol_name = "ext4_sync_file",
+    .pre_handler = ext4_sync_file_pre,
+    .post_handler = ext4_sync_file_post,
+};
+
+static struct kprobe ext4_sync_fs_kp = {
+    .symbol_name = "ext4_sync_fs",
+    .pre_handler = ext4_sync_fs_pre,
+    .post_handler = ext4_sync_fs_post,
+};
+
+static struct kprobe ext4_unfreeze_kp = {
+    .symbol_name = "ext4_unfreeze",
+    .pre_handler = ext4_unfreeze_pre,
+    .post_handler = ext4_unfreeze_post,
+};
+
+static struct kprobe ext4_write_begin_kp = {
+    .symbol_name = "ext4_write_begin",
+    .pre_handler = ext4_write_begin_pre,
+    .post_handler = ext4_write_begin_post,
+};
+
+static struct kprobe ext4_write_end_kp = {
+    .symbol_name = "ext4_write_end",
+    .pre_handler = ext4_write_end_pre,
+    .post_handler = ext4_write_end_post,
+};
+
+static struct kprobe ext4_write_inode_kp = {
+    .symbol_name = "ext4_write_inode",
+    .pre_handler = ext4_write_inode_pre,
+    .post_handler = ext4_write_inode_post,
+};
+
+static struct kprobe ext4_writepage_kp = {
+    .symbol_name = "ext4_writepage",
+    .pre_handler = ext4_writepage_pre,
+    .post_handler = ext4_writepage_post,
+};
+
+static struct kprobe ext4_writepage_kp = {
+    .symbol_name = "ext4_writepage",
+    .pre_handler = ext4_writepage_pre,
+    .post_handler = ext4_writepage_post,
+};
+
+
+static struct kprobe *fp_kps[70] = {
+    	[EXT4_ALLOC_INODE_PROBE] = &ext4_alloc_inode_kp,
+	[EXT4_BMAP_PROBE] = &ext4_bmap_kp,
+	[EXT4_DA_INVALIDATEPAGE_PROBE] = &ext4_da_invalidatepage_kp,
+	[EXT4_DA_WRITE_BEGIN_PROBE] = &ext4_da_write_begin_kp,
+	[EXT4_DA_WRITE_END_PROBE] = &ext4_da_write_end_kp,
+	[EXT4_DAX_WRITEPAGES_PROBE] = &ext4_dax_writepages_kp,
+	[EXT4_DESTROY_INODE_PROBE] = &ext4_destroy_inode_kp,
+	[EXT4_DIR_LLSEEK_PROBE] = &ext4_dir_llseek_kp,
+	[EXT4_DIR_OPEN_PROBE] = &ext4_dir_open_kp,
+	[EXT4_DIRECT_IO_PROBE] = &ext4_direct_IO_kp,
+	[EXT4_DIRTY_INODE_PROBE] = &ext4_dirty_inode_kp,
+	[EXT4_DROP_INODE_PROBE] = &ext4_drop_inode_kp,
+	[EXT4_EVICT_INODE_PROBE] = &ext4_evict_inode_kp,
+	[EXT4_FALLOCATE_PROBE] = &ext4_fallocate_kp,
+	[EXT4_FH_TO_DENTRY_PROBE] = &ext4_fh_to_dentry_kp,
+	[EXT4_FH_TO_PARENT_PROBE] = &ext4_fh_to_parent_kp,
+	[EXT4_FIEMAP_PROBE] = &ext4_fiemap_kp,
+	[EXT4_FILE_GETATTR_PROBE] = &ext4_file_getattr_kp,
+	[EXT4_FILE_MMAP_PROBE] = &ext4_file_mmap_kp,
+	[EXT4_FILE_OPEN_PROBE] = &ext4_file_open_kp,
+	[EXT4_FILE_READ_ITER_PROBE] = &ext4_file_read_iter_kp,
+	[EXT4_FILE_WRITE_ITER_PROBE] = &ext4_file_write_iter_kp,
+	[EXT4_FILEMAP_FAULT_PROBE] = &ext4_filemap_fault_kp,
+	[EXT4_FREEZE_PROBE] = &ext4_freeze_kp,
+	[EXT4_GET_ACL_PROBE] = &ext4_get_acl_kp,
+	[EXT4_GET_PARENT_PROBE] = &ext4_get_parent_kp,
+	[EXT4_INVALIDATEPAGE_PROBE] = &ext4_invalidatepage_kp,
+	[EXT4_IOCTL_PROBE] = &ext4_ioctl_kp,
+	[EXT4_IOMAP_BEGIN_PROBE] = &ext4_iomap_begin_kp,
+	[EXT4_IOMAP_END_PROBE] = &ext4_iomap_end_kp,
+	[EXT4_LISTXATTR_PROBE] = &ext4_listxattr_kp,
+	[EXT4_LLSEEK_PROBE] = &ext4_llseek_kp,
+	[EXT4_MB_SEQ_GROUPS_NEXT_PROBE] = &ext4_mb_seq_groups_next_kp,
+	[EXT4_MB_SEQ_GROUPS_SHOW_PROBE] = &ext4_mb_seq_groups_show_kp,
+	[EXT4_MB_SEQ_GROUPS_START_PROBE] = &ext4_mb_seq_groups_start_kp,
+	[EXT4_MB_SEQ_GROUPS_STOP_PROBE] = &ext4_mb_seq_groups_stop_kp,
+	[EXT4_MOUNT_PROBE] = &ext4_mount_kp,
+	[EXT4_NFS_COMMIT_METADATA_PROBE] = &ext4_nfs_commit_metadata_kp,
+	[EXT4_PAGE_MKWRITE_PROBE] = &ext4_page_mkwrite_kp,
+	[EXT4_PUT_SUPER_PROBE] = &ext4_put_super_kp,
+	[EXT4_READDIR_PROBE] = &ext4_readdir_kp,
+	[EXT4_READPAGE_PROBE] = &ext4_readpage_kp,
+	[EXT4_READPAGES_PROBE] = &ext4_readpages_kp,
+	[EXT4_RELEASE_DIR_PROBE] = &ext4_release_dir_kp,
+	[EXT4_RELEASE_FILE_PROBE] = &ext4_release_file_kp,
+	[EXT4_RELEASEPAGE_PROBE] = &ext4_releasepage_kp,
+	[EXT4_REMOUNT_PROBE] = &ext4_remount_kp,
+	[EXT4_SET_ACL_PROBE] = &ext4_set_acl_kp,
+	[EXT4_SET_PAGE_DIRTY_PROBE] = &ext4_set_page_dirty_kp,
+	[EXT4_SETATTR_PROBE] = &ext4_setattr_kp,
+	[EXT4_SHOW_OPTIONS_PROBE] = &ext4_show_options_kp,
+	[EXT4_STATFS_PROBE] = &ext4_statfs_kp,
+	[EXT4_SYNC_FILE_PROBE] = &ext4_sync_file_kp,
+	[EXT4_SYNC_FS_PROBE] = &ext4_sync_fs_kp,
+	[EXT4_UNFREEZE_PROBE] = &ext4_unfreeze_kp,
+	[EXT4_WRITE_BEGIN_PROBE] = &ext4_write_begin_kp,
+	[EXT4_WRITE_END_PROBE] = &ext4_write_end_kp,
+	[EXT4_WRITE_INODE_PROBE] = &ext4_write_inode_kp,
+	[EXT4_WRITEPAGE_PROBE] = &ext4_writepage_kp,
+	[EXT4_WRITEPAGE_PROBE] = &ext4_writepage_kp,
+
+};
+
+
+int ext4_alloc_inode_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_alloc_inode_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_bmap_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_bmap_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_da_invalidatepage_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_da_invalidatepage_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_da_write_begin_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_da_write_begin_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_da_write_end_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_da_write_end_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_dax_writepages_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_dax_writepages_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_destroy_inode_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_destroy_inode_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_dir_llseek_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_dir_llseek_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_dir_open_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_dir_open_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_direct_IO_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_direct_IO_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_dirty_inode_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_dirty_inode_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_drop_inode_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_drop_inode_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_evict_inode_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_evict_inode_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_fallocate_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_fallocate_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_fh_to_dentry_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_fh_to_dentry_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_fh_to_parent_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_fh_to_parent_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_fiemap_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_fiemap_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_file_getattr_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_file_getattr_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_file_mmap_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_file_mmap_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_file_open_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_file_open_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_file_read_iter_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_file_read_iter_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_file_write_iter_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_file_write_iter_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_filemap_fault_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_filemap_fault_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_freeze_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_freeze_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_get_acl_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_get_acl_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_get_parent_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_get_parent_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_invalidatepage_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_invalidatepage_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_ioctl_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_ioctl_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_iomap_begin_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_iomap_begin_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_iomap_end_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_iomap_end_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_listxattr_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_listxattr_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_llseek_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_llseek_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_mb_seq_groups_next_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_mb_seq_groups_next_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_mb_seq_groups_show_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_mb_seq_groups_show_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_mb_seq_groups_start_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_mb_seq_groups_start_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_mb_seq_groups_stop_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_mb_seq_groups_stop_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_mount_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_mount_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_nfs_commit_metadata_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_nfs_commit_metadata_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_page_mkwrite_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_page_mkwrite_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_put_super_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_put_super_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_readdir_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_readdir_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_readpage_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_readpage_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_readpages_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_readpages_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_release_dir_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_release_dir_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_release_file_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_release_file_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_releasepage_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_releasepage_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_remount_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_remount_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_set_acl_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_set_acl_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_set_page_dirty_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_set_page_dirty_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_setattr_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_setattr_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_show_options_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_show_options_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_statfs_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_statfs_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_sync_file_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_sync_file_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_sync_fs_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_sync_fs_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_unfreeze_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_unfreeze_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_write_begin_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_write_begin_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_write_end_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_write_end_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_write_inode_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_write_inode_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_writepage_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_writepage_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
+int ext4_writepage_pre(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+int ext4_writepage_post(struct kprobe *p, struct pt_regs *regs) 
+{
+    return 0;
+}
+
