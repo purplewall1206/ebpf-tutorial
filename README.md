@@ -9,3 +9,7 @@
 很简单，设置percpu变量，进入ext4设置1，退出设置0
 
 只需要判断0，1，即可确定到底是不是ext4在运行
+
+DEFINE_PER_CPU(bool, ext4_executing) = false;
+
+this_cpu_read/write即可
