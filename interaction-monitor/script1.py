@@ -42,19 +42,19 @@ static struct kretprobe %s_kp = {
 '''
 
 handler_fn_dec = '''
-static int %s_fn_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
-static int %s_fn_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
+static int %s_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
+static int %s_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
 '''
 
 handler_fn_impl = '''
-static int %s_fn_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
+static int %s_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
 {
     if (this_cpu_read(ext4_executing)) {
 
     }
     return 0;
 }
-static int %s_fn_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
+static int %s_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
 {
     if (this_cpu_read(ext4_executing)) {
 
@@ -64,17 +64,17 @@ static int %s_fn_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs
 '''
 
 handler_fp_dec = '''
-static int %s_fp_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
-static int %s_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
+static int %s_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
+static int %s_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
 '''
 
 handler_fp_impl = '''
-static int %s_fp_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
+static int %s_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
 {
     this_cpu_write(ext4_executing, true);
     return 0;
 }
-static int %s_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
+static int %s_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
 {
     this_cpu_write(ext4_executing, false);
     return 0;
@@ -118,7 +118,7 @@ for fn in fns:
     fn_handler_decs = fn_handler_decs + handler_fn_dec%(fn, fn)
     fn_handler_impls = fn_handler_impls + handler_fn_impl%(fn, fn)
     fn_kretprobe_reg_structs = fn_kretprobe_reg_structs + kretprobe_reg_struct%(fn, fn, fn, fn)
-    fn_kretprobe_fp_reg_items = fn_kretprobe_fp_reg_items + kretprobe_fp_reg_item%(fn.upper(), fn)
+    fn_kretprobe_fp_reg_items = fn_kretprobe_fp_reg_items + kretprobe_fp_reg_item%(fn.upper()+'_PROBE', fn)
 
 print(fn_defines)
 print(fn_handler_decs)
@@ -134,7 +134,7 @@ for fp in fps:
     fp_handler_decs = fp_handler_decs + handler_fp_dec%(fp, fp)
     fp_handler_impls = fp_handler_impls + handler_fp_impl%(fp, fp)
     fp_kretprobe_reg_structs = fp_kretprobe_reg_structs + kretprobe_reg_struct%(fp, fp, fp, fp)
-    fp_kretprobe_fp_reg_items = fp_kretprobe_fp_reg_items + kretprobe_fp_reg_item%(fp.upper(), fp)
+    fp_kretprobe_fp_reg_items = fp_kretprobe_fp_reg_items + kretprobe_fp_reg_item%(fp.upper()+'_PROBE', fp)
 
 print(fp_defines)
 print(fp_handler_decs)

@@ -76,6 +76,7 @@ static int %s_fp_entry_handler(struct kretprobe_instance *ri, struct pt_regs *re
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int %s_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -83,6 +84,7 @@ static int %s_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 '''

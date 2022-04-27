@@ -1,0 +1,1 @@
+cmd_/home/wangzc/Desktop/experiment/ebpf-tutorial/ext4_monitor/ext4_monitor.o := ld -m elf_x86_64   -r -o /home/wangzc/Desktop/experiment/ebpf-tutorial/ext4_monitor/ext4_monitor.o /home/wangzc/Desktop/experiment/ebpf-tutorial/ext4_monitor/monitor_handlers.o

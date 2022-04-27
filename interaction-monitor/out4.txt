@@ -7121,6 +7121,7 @@ static int ext4_alloc_inode_fp_entry_handler(struct kretprobe_instance *ri, stru
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_alloc_inode_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7128,6 +7129,7 @@ static int ext4_alloc_inode_fp_ret_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7136,6 +7138,7 @@ static int ext4_bmap_fp_entry_handler(struct kretprobe_instance *ri, struct pt_r
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_bmap_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7143,6 +7146,7 @@ static int ext4_bmap_fp_ret_handler(struct kretprobe_instance *ri, struct pt_reg
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7151,6 +7155,7 @@ static int ext4_da_invalidatepage_fp_entry_handler(struct kretprobe_instance *ri
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_da_invalidatepage_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7158,6 +7163,7 @@ static int ext4_da_invalidatepage_fp_ret_handler(struct kretprobe_instance *ri, 
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7166,6 +7172,7 @@ static int ext4_da_write_begin_fp_entry_handler(struct kretprobe_instance *ri, s
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_da_write_begin_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7173,6 +7180,7 @@ static int ext4_da_write_begin_fp_ret_handler(struct kretprobe_instance *ri, str
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7181,6 +7189,7 @@ static int ext4_da_write_end_fp_entry_handler(struct kretprobe_instance *ri, str
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_da_write_end_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7188,6 +7197,7 @@ static int ext4_da_write_end_fp_ret_handler(struct kretprobe_instance *ri, struc
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7196,6 +7206,7 @@ static int ext4_dax_writepages_fp_entry_handler(struct kretprobe_instance *ri, s
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_dax_writepages_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7203,6 +7214,7 @@ static int ext4_dax_writepages_fp_ret_handler(struct kretprobe_instance *ri, str
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7211,6 +7223,7 @@ static int ext4_destroy_inode_fp_entry_handler(struct kretprobe_instance *ri, st
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_destroy_inode_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7218,6 +7231,7 @@ static int ext4_destroy_inode_fp_ret_handler(struct kretprobe_instance *ri, stru
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7226,6 +7240,7 @@ static int ext4_dir_llseek_fp_entry_handler(struct kretprobe_instance *ri, struc
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_dir_llseek_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7233,6 +7248,7 @@ static int ext4_dir_llseek_fp_ret_handler(struct kretprobe_instance *ri, struct 
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7241,6 +7257,7 @@ static int ext4_dir_open_fp_entry_handler(struct kretprobe_instance *ri, struct 
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_dir_open_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7248,6 +7265,7 @@ static int ext4_dir_open_fp_ret_handler(struct kretprobe_instance *ri, struct pt
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7256,6 +7274,7 @@ static int ext4_direct_IO_fp_entry_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_direct_IO_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7263,6 +7282,7 @@ static int ext4_direct_IO_fp_ret_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7271,6 +7291,7 @@ static int ext4_dirty_inode_fp_entry_handler(struct kretprobe_instance *ri, stru
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_dirty_inode_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7278,6 +7299,7 @@ static int ext4_dirty_inode_fp_ret_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7286,6 +7308,7 @@ static int ext4_drop_inode_fp_entry_handler(struct kretprobe_instance *ri, struc
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_drop_inode_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7293,6 +7316,7 @@ static int ext4_drop_inode_fp_ret_handler(struct kretprobe_instance *ri, struct 
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7301,6 +7325,7 @@ static int ext4_evict_inode_fp_entry_handler(struct kretprobe_instance *ri, stru
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_evict_inode_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7308,6 +7333,7 @@ static int ext4_evict_inode_fp_ret_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7316,6 +7342,7 @@ static int ext4_fallocate_fp_entry_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_fallocate_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7323,6 +7350,7 @@ static int ext4_fallocate_fp_ret_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7331,6 +7359,7 @@ static int ext4_fh_to_dentry_fp_entry_handler(struct kretprobe_instance *ri, str
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_fh_to_dentry_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7338,6 +7367,7 @@ static int ext4_fh_to_dentry_fp_ret_handler(struct kretprobe_instance *ri, struc
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7346,6 +7376,7 @@ static int ext4_fh_to_parent_fp_entry_handler(struct kretprobe_instance *ri, str
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_fh_to_parent_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7353,6 +7384,7 @@ static int ext4_fh_to_parent_fp_ret_handler(struct kretprobe_instance *ri, struc
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7361,6 +7393,7 @@ static int ext4_fiemap_fp_entry_handler(struct kretprobe_instance *ri, struct pt
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_fiemap_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7368,6 +7401,7 @@ static int ext4_fiemap_fp_ret_handler(struct kretprobe_instance *ri, struct pt_r
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7376,6 +7410,7 @@ static int ext4_file_getattr_fp_entry_handler(struct kretprobe_instance *ri, str
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_file_getattr_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7383,6 +7418,7 @@ static int ext4_file_getattr_fp_ret_handler(struct kretprobe_instance *ri, struc
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7391,6 +7427,7 @@ static int ext4_file_mmap_fp_entry_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_file_mmap_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7398,6 +7435,7 @@ static int ext4_file_mmap_fp_ret_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7406,6 +7444,7 @@ static int ext4_file_open_fp_entry_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_file_open_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7413,6 +7452,7 @@ static int ext4_file_open_fp_ret_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7421,6 +7461,7 @@ static int ext4_file_read_iter_fp_entry_handler(struct kretprobe_instance *ri, s
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_file_read_iter_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7428,6 +7469,7 @@ static int ext4_file_read_iter_fp_ret_handler(struct kretprobe_instance *ri, str
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7436,6 +7478,7 @@ static int ext4_file_write_iter_fp_entry_handler(struct kretprobe_instance *ri, 
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_file_write_iter_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7443,6 +7486,7 @@ static int ext4_file_write_iter_fp_ret_handler(struct kretprobe_instance *ri, st
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7451,6 +7495,7 @@ static int ext4_filemap_fault_fp_entry_handler(struct kretprobe_instance *ri, st
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_filemap_fault_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7458,6 +7503,7 @@ static int ext4_filemap_fault_fp_ret_handler(struct kretprobe_instance *ri, stru
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7466,6 +7512,7 @@ static int ext4_freeze_fp_entry_handler(struct kretprobe_instance *ri, struct pt
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_freeze_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7473,6 +7520,7 @@ static int ext4_freeze_fp_ret_handler(struct kretprobe_instance *ri, struct pt_r
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7481,6 +7529,7 @@ static int ext4_get_acl_fp_entry_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_get_acl_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7488,6 +7537,7 @@ static int ext4_get_acl_fp_ret_handler(struct kretprobe_instance *ri, struct pt_
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7496,6 +7546,7 @@ static int ext4_get_parent_fp_entry_handler(struct kretprobe_instance *ri, struc
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_get_parent_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7503,6 +7554,7 @@ static int ext4_get_parent_fp_ret_handler(struct kretprobe_instance *ri, struct 
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7511,6 +7563,7 @@ static int ext4_invalidatepage_fp_entry_handler(struct kretprobe_instance *ri, s
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_invalidatepage_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7518,6 +7571,7 @@ static int ext4_invalidatepage_fp_ret_handler(struct kretprobe_instance *ri, str
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7526,6 +7580,7 @@ static int ext4_ioctl_fp_entry_handler(struct kretprobe_instance *ri, struct pt_
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_ioctl_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7533,6 +7588,7 @@ static int ext4_ioctl_fp_ret_handler(struct kretprobe_instance *ri, struct pt_re
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7541,6 +7597,7 @@ static int ext4_iomap_begin_fp_entry_handler(struct kretprobe_instance *ri, stru
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_iomap_begin_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7548,6 +7605,7 @@ static int ext4_iomap_begin_fp_ret_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7556,6 +7614,7 @@ static int ext4_iomap_end_fp_entry_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_iomap_end_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7563,6 +7622,7 @@ static int ext4_iomap_end_fp_ret_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7571,6 +7631,7 @@ static int ext4_listxattr_fp_entry_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_listxattr_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7578,6 +7639,7 @@ static int ext4_listxattr_fp_ret_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7586,6 +7648,7 @@ static int ext4_llseek_fp_entry_handler(struct kretprobe_instance *ri, struct pt
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_llseek_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7593,6 +7656,7 @@ static int ext4_llseek_fp_ret_handler(struct kretprobe_instance *ri, struct pt_r
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7601,6 +7665,7 @@ static int ext4_mb_seq_groups_next_fp_entry_handler(struct kretprobe_instance *r
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_mb_seq_groups_next_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7608,6 +7673,7 @@ static int ext4_mb_seq_groups_next_fp_ret_handler(struct kretprobe_instance *ri,
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7616,6 +7682,7 @@ static int ext4_mb_seq_groups_show_fp_entry_handler(struct kretprobe_instance *r
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_mb_seq_groups_show_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7623,6 +7690,7 @@ static int ext4_mb_seq_groups_show_fp_ret_handler(struct kretprobe_instance *ri,
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7631,6 +7699,7 @@ static int ext4_mb_seq_groups_start_fp_entry_handler(struct kretprobe_instance *
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_mb_seq_groups_start_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7638,6 +7707,7 @@ static int ext4_mb_seq_groups_start_fp_ret_handler(struct kretprobe_instance *ri
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7646,6 +7716,7 @@ static int ext4_mb_seq_groups_stop_fp_entry_handler(struct kretprobe_instance *r
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_mb_seq_groups_stop_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7653,6 +7724,7 @@ static int ext4_mb_seq_groups_stop_fp_ret_handler(struct kretprobe_instance *ri,
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7661,6 +7733,7 @@ static int ext4_mount_fp_entry_handler(struct kretprobe_instance *ri, struct pt_
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_mount_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7668,6 +7741,7 @@ static int ext4_mount_fp_ret_handler(struct kretprobe_instance *ri, struct pt_re
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7676,6 +7750,7 @@ static int ext4_nfs_commit_metadata_fp_entry_handler(struct kretprobe_instance *
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_nfs_commit_metadata_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7683,6 +7758,7 @@ static int ext4_nfs_commit_metadata_fp_ret_handler(struct kretprobe_instance *ri
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7691,6 +7767,7 @@ static int ext4_page_mkwrite_fp_entry_handler(struct kretprobe_instance *ri, str
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_page_mkwrite_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7698,6 +7775,7 @@ static int ext4_page_mkwrite_fp_ret_handler(struct kretprobe_instance *ri, struc
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7706,6 +7784,7 @@ static int ext4_put_super_fp_entry_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_put_super_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7713,6 +7792,7 @@ static int ext4_put_super_fp_ret_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7721,6 +7801,7 @@ static int ext4_readdir_fp_entry_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_readdir_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7728,6 +7809,7 @@ static int ext4_readdir_fp_ret_handler(struct kretprobe_instance *ri, struct pt_
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7736,6 +7818,7 @@ static int ext4_readpage_fp_entry_handler(struct kretprobe_instance *ri, struct 
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_readpage_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7743,6 +7826,7 @@ static int ext4_readpage_fp_ret_handler(struct kretprobe_instance *ri, struct pt
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7751,6 +7835,7 @@ static int ext4_readpages_fp_entry_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_readpages_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7758,6 +7843,7 @@ static int ext4_readpages_fp_ret_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7766,6 +7852,7 @@ static int ext4_release_dir_fp_entry_handler(struct kretprobe_instance *ri, stru
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_release_dir_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7773,6 +7860,7 @@ static int ext4_release_dir_fp_ret_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7781,6 +7869,7 @@ static int ext4_release_file_fp_entry_handler(struct kretprobe_instance *ri, str
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_release_file_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7788,6 +7877,7 @@ static int ext4_release_file_fp_ret_handler(struct kretprobe_instance *ri, struc
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7796,6 +7886,7 @@ static int ext4_releasepage_fp_entry_handler(struct kretprobe_instance *ri, stru
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_releasepage_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7803,6 +7894,7 @@ static int ext4_releasepage_fp_ret_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7811,6 +7903,7 @@ static int ext4_remount_fp_entry_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_remount_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7818,6 +7911,7 @@ static int ext4_remount_fp_ret_handler(struct kretprobe_instance *ri, struct pt_
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7826,6 +7920,7 @@ static int ext4_set_acl_fp_entry_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_set_acl_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7833,6 +7928,7 @@ static int ext4_set_acl_fp_ret_handler(struct kretprobe_instance *ri, struct pt_
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7841,6 +7937,7 @@ static int ext4_set_page_dirty_fp_entry_handler(struct kretprobe_instance *ri, s
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_set_page_dirty_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7848,6 +7945,7 @@ static int ext4_set_page_dirty_fp_ret_handler(struct kretprobe_instance *ri, str
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7856,6 +7954,7 @@ static int ext4_setattr_fp_entry_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_setattr_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7863,6 +7962,7 @@ static int ext4_setattr_fp_ret_handler(struct kretprobe_instance *ri, struct pt_
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7871,6 +7971,7 @@ static int ext4_show_options_fp_entry_handler(struct kretprobe_instance *ri, str
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_show_options_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7878,6 +7979,7 @@ static int ext4_show_options_fp_ret_handler(struct kretprobe_instance *ri, struc
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7886,6 +7988,7 @@ static int ext4_statfs_fp_entry_handler(struct kretprobe_instance *ri, struct pt
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_statfs_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7893,6 +7996,7 @@ static int ext4_statfs_fp_ret_handler(struct kretprobe_instance *ri, struct pt_r
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7901,6 +8005,7 @@ static int ext4_sync_file_fp_entry_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_sync_file_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7908,6 +8013,7 @@ static int ext4_sync_file_fp_ret_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7916,6 +8022,7 @@ static int ext4_sync_fs_fp_entry_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_sync_fs_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7923,6 +8030,7 @@ static int ext4_sync_fs_fp_ret_handler(struct kretprobe_instance *ri, struct pt_
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7931,6 +8039,7 @@ static int ext4_unfreeze_fp_entry_handler(struct kretprobe_instance *ri, struct 
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_unfreeze_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7938,6 +8047,7 @@ static int ext4_unfreeze_fp_ret_handler(struct kretprobe_instance *ri, struct pt
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7946,6 +8056,7 @@ static int ext4_write_begin_fp_entry_handler(struct kretprobe_instance *ri, stru
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_write_begin_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7953,6 +8064,7 @@ static int ext4_write_begin_fp_ret_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7961,6 +8073,7 @@ static int ext4_write_end_fp_entry_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_write_end_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7968,6 +8081,7 @@ static int ext4_write_end_fp_ret_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7976,6 +8090,7 @@ static int ext4_write_inode_fp_entry_handler(struct kretprobe_instance *ri, stru
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_write_inode_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7983,6 +8098,7 @@ static int ext4_write_inode_fp_ret_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -7991,6 +8107,7 @@ static int ext4_writepage_fp_entry_handler(struct kretprobe_instance *ri, struct
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_writepage_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -7998,6 +8115,7 @@ static int ext4_writepage_fp_ret_handler(struct kretprobe_instance *ri, struct p
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
@@ -8006,6 +8124,7 @@ static int ext4_writepages_fp_entry_handler(struct kretprobe_instance *ri, struc
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC_KERNEL_INODE
     return 0;
 }
 static int ext4_writepages_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -8013,6 +8132,7 @@ static int ext4_writepages_fp_ret_handler(struct kretprobe_instance *ri, struct 
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC_EXTENSION_INODE
     return 0;
 }
 
