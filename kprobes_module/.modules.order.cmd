@@ -1,1 +1,0 @@
-cmd_/home/wangzc/Desktop/experiment/ebpf-tutorial/kprobes_module/modules.order := {   echo /home/wangzc/Desktop/experiment/ebpf-tutorial/kprobes_module/kprobe_example.ko; :; } | awk '!x[$$0]++' - > /home/wangzc/Desktop/experiment/ebpf-tutorial/kprobes_module/modules.order

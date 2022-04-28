@@ -1,1 +1,0 @@
-cmd_/home/wangzc/Desktop/experiment/ebpf-tutorial/kprobes_module/Module.symvers := sed 's/\.ko$$/\.o/' /home/wangzc/Desktop/experiment/ebpf-tutorial/kprobes_module/modules.order | scripts/mod/modpost -m -a  -o /home/wangzc/Desktop/experiment/ebpf-tutorial/kprobes_module/Module.symvers -e -i Module.symvers   -T -
