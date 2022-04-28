@@ -4,7 +4,7 @@ unsigned long count = 0;
 static int ext4_monitor(struct kprobe *p, struct pt_regs *regs)
 {
     char name_sym[100];
-    if (++count % 10000 != 0)
+    if (++count % 100000 != 0)
         return 0;
 
     pr_info("<%s> pre_handler: p->addr = %pF, ip = %lx, flags = 0x%lx\n",
@@ -37,16 +37,16 @@ static int __init kprobe_init(void)
 
 static void __exit kprobe_exit(void)
 {
-    struct module *(*find_modulex)(char *);
-    struct module *ext4_mod;
-    find_modulex = 0xffffffff9bbf0330;
+    // struct module *(*find_modulex)(char *);
+    // struct module *ext4_mod;
+    // find_modulex = 0xffffffff9bbf0330;
 
-    ext4_mod = find_modulex("ext4");
-    if (!ext4_mod) {
-        pr_info("ext4 not found\n");
-    } else {
-        pr_info("ext4 base: %016lx, text_size:%u\n", ext4_mod->core_layout.base, ext4_mod->core_layout.text_size);
-    }
+    // ext4_mod = find_modulex("ext4");
+    // if (!ext4_mod) {
+    //     pr_info("ext4 not found\n");
+    // } else {
+    //     pr_info("ext4 base: %016lx, text_size:%u\n", ext4_mod->core_layout.base, ext4_mod->core_layout.text_size);
+    // }
     unregister_kprobes(kps, 230);
     pr_info("kprobe at %pF unregistered\n", kps);
 }
@@ -948,9 +948,7 @@ int generic_file_llseek_size_ext4_monitor(struct kprobe *p, struct pt_regs *regs
 
 int generic_file_read_iter_ext4_monitor(struct kprobe *p, struct pt_regs *regs) 
 {
-    char name_sym[100];
-    pr_info("======================================\n<%s> pre_handler: p->addr = %pF, ip = %lx, flags = 0x%lx\n",
-        p->symbol_name, p->addr, regs->ip, regs->flags);
+    ext4_monitor(p, regs);
     if (!is_called_by_ext4()) 
         return 0;
     

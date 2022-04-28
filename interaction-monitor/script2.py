@@ -1,15 +1,3 @@
-# kprobe_fn_reg = '''
-# static struct kprobe *fn_kps[70] = {
-#     %s
-# };
-# '''
-
-# kprobe_fp_reg = '''
-# static struct kprobe *fp_kps[240] = {
-#     %s
-# };
-# '''
-
 defines_item = "#define %s %d\n"
 
 kretprobe_fn_reg = '''
@@ -42,12 +30,12 @@ static struct kretprobe %s_kp = {
 '''
 
 handler_fn_dec = '''
-static int %s_fn_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
-static int %s_fn_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
+static int %s_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
+static int %s_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
 '''
 
 handler_fn_impl = '''
-static int %s_fn_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
+static int %s_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
 {
     if (this_cpu_read(ext4_executing)) {
         SWITCH_KERENL_STACK
@@ -55,7 +43,7 @@ static int %s_fn_entry_handler(struct kretprobe_instance *ri, struct pt_regs *re
     }
     return 0;
 }
-static int %s_fn_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
+static int %s_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
 {
     if (this_cpu_read(ext4_executing)) {
         SWITCH_EXTENSION_STACK
@@ -66,28 +54,27 @@ static int %s_fn_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs
 '''
 
 handler_fp_dec = '''
-static int %s_fp_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
-static int %s_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
+static int %s_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
+static int %s_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs);
 '''
 
 handler_fp_impl = '''
-static int %s_fp_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
+static int %s_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
 {
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
-    SYNC_KERNEL_INODE
     return 0;
 }
-static int %s_fp_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
+static int %s_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
 {
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
-    SYNC_EXTENSION_INODE
     return 0;
 }
 '''
+
 
 
 fps = []

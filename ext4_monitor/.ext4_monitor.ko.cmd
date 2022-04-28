@@ -1,1 +1,0 @@
-cmd_/home/wangzc/Desktop/experiment/ebpf-tutorial/ext4_monitor/ext4_monitor.ko := ld -r -m elf_x86_64 --build-id=sha1  -T scripts/module.lds -o /home/wangzc/Desktop/experiment/ebpf-tutorial/ext4_monitor/ext4_monitor.ko /home/wangzc/Desktop/experiment/ebpf-tutorial/ext4_monitor/ext4_monitor.o /home/wangzc/Desktop/experiment/ebpf-tutorial/ext4_monitor/ext4_monitor.mod.o;  true
