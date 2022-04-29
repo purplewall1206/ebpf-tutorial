@@ -1,0 +1,116 @@
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow-> = origin->;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_mode = origin->i_mode;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_opflags = origin->i_opflags;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_uid = origin->i_uid;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_gid = origin->i_gid;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_flags = origin->i_flags;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_op = origin->i_op;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_sb = origin->i_sb;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_mapping = origin->i_mapping;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_rdev = origin->i_rdev;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_size = origin->i_size;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_atime = origin->i_atime;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_mtime = origin->i_mtime;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_ctime = origin->i_ctime;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_bytes = origin->i_bytes;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_blkbits = origin->i_blkbits;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_write_hint = origin->i_write_hint;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_blocks = origin->i_blocks;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_state = origin->i_state;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_fop = origin->i_fop;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_flctx = origin->i_flctx;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_generation = origin->i_generation;
+	if (shadow->%s != origin->%s) {
+		pr_err("alter at inode %u\n", origin->i_ino);
+	}
+	shadow->i_private = origin->i_private;
+
+
+	shadow->i_mode = origin->i_mode;
+	shadow->i_opflags = origin->i_opflags;
+	shadow->i_uid = origin->i_uid;
+	shadow->i_gid = origin->i_gid;
+	shadow->i_flags = origin->i_flags;
+	shadow->i_op = origin->i_op;
+	shadow->i_sb = origin->i_sb;
+	shadow->i_mapping = origin->i_mapping;
+	shadow->i_rdev = origin->i_rdev;
+	shadow->i_size = origin->i_size;
+	shadow->i_atime = origin->i_atime;
+	shadow->i_mtime = origin->i_mtime;
+	shadow->i_ctime = origin->i_ctime;
+	shadow->i_bytes = origin->i_bytes;
+	shadow->i_blkbits = origin->i_blkbits;
+	shadow->i_write_hint = origin->i_write_hint;
+	shadow->i_blocks = origin->i_blocks;
+	shadow->i_state = origin->i_state;
+	shadow->i_fop = origin->i_fop;
+	shadow->i_flctx = origin->i_flctx;
+	shadow->i_generation = origin->i_generation;
+	shadow->i_private = origin->i_private;

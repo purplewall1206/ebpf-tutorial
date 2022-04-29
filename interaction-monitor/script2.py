@@ -64,6 +64,7 @@ static int %s_entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
     this_cpu_write(ext4_executing, true);
     SWITCH_EXTENSION_STACK
     SWITCH_EXTENSION_EPT
+    SYNC
     return 0;
 }
 static int %s_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
@@ -71,6 +72,7 @@ static int %s_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
     this_cpu_write(ext4_executing, false);
     SWITCH_KERENL_STACK
     SWITCH_KERNEL_EPT
+    SYNC
     return 0;
 }
 '''
