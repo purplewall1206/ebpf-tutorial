@@ -50,6 +50,9 @@ int __init kprobe_init(void)
 
     pr_info("kprobe_init\n ");
 
+    dummy_inode = (struct inode *) kmalloc(sizeof(struct inode), GFP_KERNEL);
+	dummy_inode->shadow_obj = (struct inode *) kmalloc(sizeof(struct inode), GFP_KERNEL);
+
     ret = register_kretprobes(fn_kps, 230);
     if (ret < 0) {
         pr_err("register_kretprobes failed, fn_kps returned %d\n", ret);
@@ -62,8 +65,6 @@ int __init kprobe_init(void)
         return ret;
     }
 
-	dummy_inode = (struct inode *) kmalloc(sizeof(struct inode), GFP_KERNEL);
-	dummy_inode->shadow_obj = (struct inode *) kmalloc(sizeof(struct inode), GFP_KERNEL);
 
     pr_info("Planted fn & fp kretprobes\n");
 
